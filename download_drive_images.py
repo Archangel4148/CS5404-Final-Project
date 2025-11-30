@@ -1,28 +1,54 @@
 import subprocess
 import os
 import tarfile
+import re
+import gdown
+
+def get_drive_filename(file_id: str) -> str:
+    """
+    Ask gdown for metadata and extract the original file name.
+    """
+    cmd = ["gdown", "--id", file_id, "--print"]
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+
+    if proc.returncode != 0:
+        print(proc.returncode)
+        print("[WARN] Could not retrieve name, using ID as fallback.")
+        return file_id + ".tar.gz"
+
+    output = proc.stdout
+
+    # Look for: file: something.tar.gz
+    match = re.search(r"file:\s*(.+)", output)
+    if match:
+        return os.path.basename(match.group(1))
+
+    print("[WARN] Could not find filename, fallback to ID.tar.gz")
+    return file_id + ".tar.gz"
 
 
 def download_files(wanted_files: list[str], out_dir, unzip=False):
     """Download selected files (expects wanted_files to be a list of file IDs)"""
     os.makedirs(out_dir, exist_ok=True)
 
-    for i, file_id in enumerate(wanted_files):
-        fname = f"image_{i+1}.tar.gz"
-        out_path = os.path.join(out_dir, f"image_{i+1}.tar.gz")
-        extract_dir = os.path.join(out_dir, f"image_{i+1}")
+    for url in wanted_files:
+        # fname = get_drive_filename(file_id)
+        fname = "image_ball.tar.gz"
+        out_path = os.path.join(out_dir, fname)
+        extract_dir = os.path.join(out_dir, fname.replace(".tar.gz", ""))
 
         if os.path.exists(out_path):
             print(f"[SKIP] {fname} already exists, skipping download.")
         else:
-            print(f"[INFO] Downloading image_{i+1} ({file_id})...")
-            cmd = ["gdown", file_id, "-O", out_path]
+            print(f"[INFO] Downloading {fname} ({url})...")
+            # cmd = ["gdown", file_id, "-O", out_path]
+            gdown.download(url=url, output=out_path, fuzzy=True)
 
-            proc = subprocess.run(cmd)
-            if proc.returncode != 0:
-                print(f"[ERROR] Failed to download {fname}")
-            else:
-                print(f"[OK] Saved {fname}")
+            # proc = subprocess.run(cmd)
+            # if proc.returncode != 0:
+            #     print(f"[ERROR] Failed to download {fname}")
+            # else:
+            #     print(f"[OK] Saved {fname}")
         
         if unzip:
             if os.path.exists(extract_dir):

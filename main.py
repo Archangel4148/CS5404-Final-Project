@@ -19,10 +19,11 @@ print("CUDA available:", torch.cuda.is_available())
 print("GPU:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else None)
 
 # Read desired file IDs
-item_ids = load_item_ids_from_drive_list(DRIVE_LINK_LIST_PATH)
+urls = open(DRIVE_LINK_LIST_PATH, "r").readlines()
 
 # Download selected ones
-wanted_files = item_ids[:DESIRED_FILE_COUNT]
+# wanted_files = item_ids[:DESIRED_FILE_COUNT]
+wanted_files = [urls[5]]
 download_files(wanted_files, RAW_IMAGES_PATH, unzip=True)
 
 # Move files and build relations

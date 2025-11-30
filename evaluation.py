@@ -1,119 +1,134 @@
-import os
-import random
-import requests
-import trimesh
+import torch
 import numpy as np
+from loading_things import load_ply_pointcloud
 
 
-# ===============================
-# CONFIG
-# ===============================
+def to_tensor(x, device=None):
+    """Converts numpy → torch tensor safely."""
+    if isinstance(x, np.ndarray):
+        x = torch.from_numpy(x)
 
-OMNI_BASE = "https://omniobject3d.stanford.edu/download"
-LOCAL_BASE = "datasets/omniobject3d"
+    x = x.float()
+    if device is not None:
+        x = x.to(device)
 
-# List of all OmniObject3D object categories
-# (Complete official list, stable across releases)
-OMNI_CLASSES = [
-    "airplane", "apple", "banana", "basket", "bathtub", "bed", "bench",
-    "bicycle", "bottle", "bowl", "bus", "cabinet", "camera", "can", "cap",
-    "car", "chair", "clock", "cup", "desk", "door", "faucet", "guitar",
-    "helmet", "jar", "keyboard", "knife", "laptop", "microwave", "motorbike",
-    "mug", "pencil", "piano", "plate", "pot", "remote", "scissors",
-    "stapler", "stove", "table", "teapot", "toaster", "toilet", "train",
-    "vase", "washing_machine"
-]
-
-# Each class has models numbered 0001–00XX
-MAX_MODELS_PER_CLASS = 50   # safe upper bound
+    return x
 
 
-# ===============================
-# DOWNLOAD FUNCTION
-# ===============================
-
-def download_omni_object(category: str, model_id: int, out_dir=LOCAL_BASE):
+def chamfer_distance(pcl_a, pcl_b, device="cuda"):
     """
-    Download a single OmniObject3D mesh.
-    Returns path to model.obj or None.
+    Chamfer Distance between two point clouds.
+
+    pcl_a: [N, 3]
+    pcl_b: [M, 3]
+    device: "cuda" or "cpu"
     """
 
-    model_name = f"{category}_{model_id:04d}"
-    dest_dir = os.path.join(out_dir, model_name)
-    mesh_path = os.path.join(dest_dir, "model.obj")
+    # Move to tensor + device
+    pcl_a = to_tensor(pcl_a, device)
+    pcl_b = to_tensor(pcl_b, device)
 
-    # Skip if already cached
-    if os.path.exists(mesh_path):
-        return mesh_path
+    # Compute pairwise distances
+    # Efficient batched squared L2 norms
+    diff = pcl_a.unsqueeze(1) - pcl_b.unsqueeze(0)
+    dist = torch.sum(diff ** 2, dim=2)
 
-    os.makedirs(dest_dir, exist_ok=True)
+    # CD = mean(min(dist(a→b))) + mean(min(dist(b→a)))
+    cd_ab = torch.mean(torch.min(dist, dim=1)[0])
+    cd_ba = torch.mean(torch.min(dist, dim=0)[0])
 
-    # File URL
-    url = f"{OMNI_BASE}/{category}/{model_name}.obj"
-
-    print(f"Downloading: {model_name} ...")
-
-    r = requests.get(url)
-    if r.status_code != 200:
-        print(f" ❌ Failed: {model_name}")
-        return None
-
-    with open(mesh_path, "wb") as f:
-        f.write(r.content)
-
-    print(f" ✔ Saved: {mesh_path}")
-    return mesh_path
+    return cd_ab + cd_ba
 
 
-# ===============================
-# LOADING + SAMPLING
-# ===============================
-
-def load_mesh_as_points(path, sample_points=100000):
-    """Loads a mesh file and uniformly samples its surface."""
-    mesh = trimesh.load(path)
-    if isinstance(mesh, trimesh.Scene):
-        mesh = trimesh.util.concatenate(
-            [mesh.geometry[g] for g in mesh.geometry]
-        )
-
-    pts, _ = trimesh.sample.sample_surface(mesh, sample_points)
-    return pts.astype(np.float32)
-
-
-# ===============================
-# MASTER PIPELINE
-# ===============================
-
-def get_random_omni_samples(n=5, points_per_mesh=50000):
+def fscore(pcl_a, pcl_b, tau=0.01, device="cuda"):
     """
-    Downloads n random OmniObject3D models and samples points from them.
-    Returns list of numpy arrays.
+    Computes the F-score between two point clouds:
+    Precision, Recall, and F-score.
     """
-    pointclouds = []
 
-    for _ in range(n):
-        # Pick random category
-        cat = random.choice(OMNI_CLASSES)
+    pcl_a = to_tensor(pcl_a, device)
+    pcl_b = to_tensor(pcl_b, device)
 
-        # Pick random model ID (many classes have <50, but safe)
-        model_id = random.randint(1, MAX_MODELS_PER_CLASS)
+    diff = pcl_a.unsqueeze(1) - pcl_b.unsqueeze(0)
+    dist = torch.sqrt(torch.sum(diff ** 2, dim=2))
 
-        mesh_path = download_omni_object(cat, model_id)
+    # Precision: fraction of predicted points close to GT
+    precision = (torch.min(dist, dim=1)[0] < tau).float().mean()
 
-        if mesh_path is None:
-            print("Skipping failed download.")
-            continue
+    # Recall: fraction of GT points close to predicted
+    recall = (torch.min(dist, dim=0)[0] < tau).float().mean()
 
-        try:
-            pts = load_mesh_as_points(mesh_path, sample_points=points_per_mesh)
-            pointclouds.append(pts)
-        except Exception as e:
-            print("Error loading mesh:", e)
+    if precision + recall == 0:
+        f = torch.tensor(0.0, device=device)
+    else:
+        f = 2 * precision * recall / (precision + recall)
 
-    return pointclouds
+    return precision.item(), recall.item(), f.item()
 
 
-pcs = get_random_omni_samples(n=10, points_per_mesh=20000)
-print(len(pcs), "point clouds loaded.")
-print("Shape of first:", pcs[0].shape)
+def normalize_points(pts):
+    pts = pts - pts.mean(axis=0)   # center at origin
+    scale = np.max(np.linalg.norm(pts, axis=1))
+    pts = pts / scale
+    return pts
+
+def evaluate_pointcloud(pred_pts, gt_pts, tau=0.01):
+    """
+    Master evaluation function with GPU→CPU fallback.
+    pred_pts: numpy array, shape [N, 3]
+    gt_pts:   numpy array, shape [M, 3]
+    """
+
+    # Try CUDA first
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    # Normalize point clouds (match coordinate systems/alignment)
+    pred_pts, gt_pts = normalize_points(pred_pts), normalize_points(gt_pts)
+
+    try:
+        cd = chamfer_distance(pred_pts, gt_pts, device=device)
+        prec, rec, f = fscore(pred_pts, gt_pts, tau=tau, device=device)
+        return {
+            "chamfer_distance": float(cd),
+            "precision": prec,
+            "recall": rec,
+            "fscore": f,
+            "device_used": device,
+        }
+
+    except RuntimeError:
+        # Fallback to CPU if CUDA OOM or unavailable
+        print("[WARN] CUDA failed — falling back to CPU")
+
+        device = "cpu"
+        cd = chamfer_distance(pred_pts, gt_pts, device=device)
+        prec, rec, f = fscore(pred_pts, gt_pts, tau=tau, device=device)
+
+        return {
+            "chamfer_distance": float(cd),
+            "precision": prec,
+            "recall": rec,
+            "fscore": f,
+            "device_used": device,
+        }
+
+
+
+if __name__ == "__main__":
+    TESTING_FOLDER = r"D:\Programming\CS5404-Final-Project\examples_for_testing\\"
+    GROUND_TRUTH_PATH = TESTING_FOLDER + r"db_ball_013_points.ply"
+    SPAR3D_PATH = TESTING_FOLDER + r"spar3d_ball_013_points.ply"
+    
+    # Load ground truth (~16k points)
+    gt = load_ply_pointcloud(GROUND_TRUTH_PATH)
+
+    # Load SPAR3D output (512 pts)
+    pred = load_ply_pointcloud(SPAR3D_PATH)
+
+    # Evaluate the reconstruction at each threshold
+    taus_to_test = [0.1, 0.2, 0.5]
+    for tau in taus_to_test:
+        results = evaluate_pointcloud(pred, gt, tau)
+        print(f"Results (tau = {tau}): {results}")
+
+    
