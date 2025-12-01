@@ -20,6 +20,8 @@ FINAL_RELATION_FILE_PATH = BASE_DB_PATH + r"\object_relations.json"
 print("CUDA available:", torch.cuda.is_available())
 print("GPU:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else None)
 
+############# DOWNLOADING DATABASE FILES #############
+
 # Read desired file IDs
 urls = open(DRIVE_LINK_LIST_PATH, "r").readlines()
 
@@ -34,6 +36,8 @@ move_images_and_build_full_relations(
     pointcloud_root=POINTCLOUD_ROOT,
     relation_output_path=FINAL_RELATION_FILE_PATH
 )
+
+############# LOADING/TESTING #############
 
 # Load relations
 ids, plys, imgs = load_dataset_relations()
