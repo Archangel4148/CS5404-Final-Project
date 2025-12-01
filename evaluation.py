@@ -1,3 +1,5 @@
+import os
+
 import torch
 import numpy as np
 from loading_things import load_ply_pointcloud
@@ -115,7 +117,7 @@ def evaluate_pointcloud(pred_pts, gt_pts, tau=0.01):
 
 
 if __name__ == "__main__":
-    TESTING_FOLDER = r"D:\Programming\CS5404-Final-Project\examples_for_testing\\"
+    TESTING_FOLDER = os.path.join(os.getcwd(), "examples_for_testing\\")
     GROUND_TRUTH_PATH = TESTING_FOLDER + r"db_ball_013_points.ply"
     SPAR3D_PATH = TESTING_FOLDER + r"spar3d_ball_013_points.ply"
     
