@@ -1,18 +1,15 @@
 import numpy as np
 from PIL import Image, ImageFilter, ImageEnhance
 
-def distort_image(img: Image.Image, blur=0, noise=0, exposure=1.0):
+def distort_image(img: Image.Image, blur=0, noise=0, exposure=1.0) -> Image.Image:
     """Apply blur, noise, exposure shifts. Returns new PIL image."""
-
-    # blur
+    # Apply blur
     if blur > 0:
         img = img.filter(ImageFilter.GaussianBlur(radius=blur))
-
-    # exposure
+    # Apply exposure
     if exposure != 1.0:
         img = ImageEnhance.Brightness(img).enhance(exposure)
-
-    # noise
+    # Apply noise
     if noise > 0:
         arr = np.array(img).astype(np.float32)
         noise_arr = np.random.normal(0, noise, arr.shape)
@@ -36,6 +33,4 @@ if __name__ == "__main__":
 
     for i, params in enumerate(distortions):
         distorted = distort_image(img, **params)
-        distorted.show(title=f"Distortion {i}")  # opens image
-        # distorted.save(f"distorted_{i}.png")     # saves to file
-        # print(f"[INFO] Saved distorted_{i}.png with params: {params}")
+        distorted.show(title=f"Distortion {i}")  # Show each image

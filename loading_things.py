@@ -6,16 +6,13 @@ import numpy as np
 from paths import fix_path
 
 
-def load_dataset_relations(json_path) -> dict[str: dict[str: Path]]:
-    """
-    Loads your dataset relation file and returns grouped data
-    """
-
+def load_dataset_relations(json_path) -> dict[str, dict[str, Path]]:
+    """Loads the dataset relation file and returns grouped data"""
     with open(json_path, "r") as f:
         data = json.load(f)
 
+    # Populate the grouped data from the mapping json
     grouped_data = {}
-
     for group_name, group_objs in data.items():
         grouped_data[group_name] = {}
         for obj_id, fields in group_objs.items():
@@ -23,18 +20,18 @@ def load_dataset_relations(json_path) -> dict[str: dict[str: Path]]:
             img_dir = fix_path(fields.get("images"))
 
             if pc_path is None or img_dir is None:
-                print(f"[WARN] Missing fields for {obj_id}, skipping")
+                print(f"WARNING: Missing fields for {obj_id}, skipping")
                 continue
 
             grouped_data[group_name][obj_id] = {
                 "point_cloud": Path(pc_path),
                 "images": Path(img_dir)
             }
-
     return grouped_data
 
 
-def load_ply_pointcloud(path):
+def load_ply_pointcloud(path) -> np.ndarray:
+    """Load a .ply file into a numpy array of points"""
     ply = PlyData.read(path)
     data = ply['vertex']
     points = np.vstack([data['x'], data['y'], data['z']]).T

@@ -31,7 +31,6 @@ distortion_levels = [
 ROOT_DIR = Path(os.getcwd())
 BASE_DB_PATH = fix_path(ROOT_DIR / "datasets" / "omniobject3d")
 DRIVE_LINK_LIST_PATH = fix_path(ROOT_DIR / "curated_drive_ids.txt")
-# DRIVE_LINK_LIST_PATH = fix_path(ROOT_DIR / "drive_file_ids.txt")
 RAW_IMAGES_PATH = BASE_DB_PATH / "images_raw"
 IMAGES_PATH = BASE_DB_PATH / "images"
 POINTCLOUD_ROOT = BASE_DB_PATH / "ply_16384" / "extracted" / "16384"
@@ -53,7 +52,7 @@ print("GPU:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else No
 SKIP_DOWNLOAD = True
 
 if not SKIP_DOWNLOAD:
-    # Read desired file IDs
+    # Read file IDs
     urls = open(DRIVE_LINK_LIST_PATH, "r").readlines()
 
     # Download selected ones
@@ -70,7 +69,7 @@ if not SKIP_DOWNLOAD:
 
 ############# LOADING/TESTING #############
 
-taus = [0.05, 0.075, 0.1]
+taus = [0.1, 0.2, 0.5]
 
 # Load relations
 grouped_data = load_dataset_relations(json_path=FINAL_RELATION_FILE_PATH)
@@ -96,7 +95,7 @@ if prune_files:
         if not dirnames and not filenames:  # empty folder
             Path(dirpath).rmdir()
 
-    print(f"[INFO] Kept {len(images_to_keep)} images, deleted unused images from {IMAGES_PATH}")
+    print(f"Kept {len(images_to_keep)} images, deleted unused images from {IMAGES_PATH}")
 
 results = {}
 for group_name, group_objs in grouped_data.items():
@@ -122,9 +121,9 @@ for group_name, group_objs in grouped_data.items():
             # Save after each object
             with open(RESULTS_PATH, "w") as f:
                 json.dump(results, f, indent=4)
-            print(f"[INFO] Saved results for {obj_id} → {RESULTS_PATH}")
+            print(f"Saved results for {obj_id} → {RESULTS_PATH}")
 
         except Exception as e:
-            print(f"[ERROR] Failed processing {obj_id}: {e}")
+            print(f"Failed processing {obj_id}: {e}")
 
 print(f"\nAll results saved → {RESULTS_PATH}")

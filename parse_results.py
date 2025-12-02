@@ -26,14 +26,15 @@ def map_exposure_level(exp):
         return "high"
 
 def parse_results(json_path, csv_path):
+    """Parses the results JSON into an R-Studio compatible .csv for statistical analysis."""
     # Load JSON
     with open(json_path, "r") as f:
         data = json.load(f)
 
     rows = []
-    tau_values = set()
 
-    # --- First pass: collect all tau values ---
+    # Collect all the unique tau values
+    tau_values = set()
     for item_name, item_data in data.items():
         for obj_id, obj_data in item_data.items():
             for img in obj_data["images"]:
@@ -43,7 +44,7 @@ def parse_results(json_path, csv_path):
 
     tau_values = sorted(tau_values)
 
-    # --- CSV Header ---
+    # Build the table header
     header = [
         "object",
         "blurLevel",
@@ -52,22 +53,21 @@ def parse_results(json_path, csv_path):
         "chamferDistance",
     ] + [f"F{tau}" for tau in tau_values]
 
-    # --- Second pass: build rows ---
+    # Build the data rows
     for item_name, item_data in data.items():
         for obj_id, obj_data in item_data.items():
             for img in obj_data["images"]:
                 for dist in img["distortions"]:
-
+                    # Distortion details
                     distortion = dist["distortion"]
-                    if str(distortion["blur"]) == "0.0":
-                        continue
                     blur_level = map_blur_level(distortion["blur"])
                     exposure_level = map_exposure_level(distortion["exposure"])
                     noise_level = map_noise_level(distortion["noise"])
 
-                    # Chamfer distance (same per distortion)
+                    # Chamfer distance (same for each distortion)
                     chamfer = dist["evaluations"][0]["metrics"]["chamfer_distance"]
 
+                    # Build the row
                     row = {
                         "object": item_name,
                         "blurLevel": blur_level,
@@ -76,14 +76,15 @@ def parse_results(json_path, csv_path):
                         "chamferDistance": chamfer,
                     }
 
-                    # Insert F-scores per-tau
+                    # Insert F-scores for each tau
                     for ev in dist["evaluations"]:
                         tau = ev["tau"]
                         row[f"F{tau}"] = ev["metrics"]["fscore"]
 
+                    # Save the result
                     rows.append(row)
 
-    # --- Write CSV ---
+    # Write the results to the CSV
     with open(csv_path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=header)
         writer.writeheader()
@@ -94,8 +95,6 @@ def parse_results(json_path, csv_path):
 
 if __name__ == "__main__":
     parse_results(
-        # r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs\pipeline_results_20251201_225815.json",
-        # r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs\pipeline_results_20251201_231844.json",
         r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\pipeline_results_re-evaluated.json",
         "parsed_results-re-evaluated.csv"
     )

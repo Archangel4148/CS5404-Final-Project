@@ -5,33 +5,23 @@ import numpy as np
 from loading_things import load_ply_pointcloud
 
 
-def to_tensor(x, device=None):
-    """Converts numpy → torch tensor safely."""
-    if isinstance(x, np.ndarray):
-        x = torch.from_numpy(x)
-
+def to_tensor(x: np.ndarray, device=None):
+    """Converts numpy array to a torch tensor."""
+    x = torch.from_numpy(x)
     x = x.float()
+    # If there's a device, convert to that device's format
     if device is not None:
         x = x.to(device)
-
     return x
 
 
-def chamfer_distance(pcl_a, pcl_b, device="cuda"):
-    """
-    Chamfer Distance between two point clouds.
-
-    pcl_a: [N, 3]
-    pcl_b: [M, 3]
-    device: "cuda" or "cpu"
-    """
-
-    # Move to tensor + device
+def chamfer_distance(pcl_a: np.ndarray, pcl_b: np.ndarray, device) -> float:
+    """Calculate Chamfer Distance between two point clouds using the provided device."""
+    # Convert to tensors
     pcl_a = to_tensor(pcl_a, device)
     pcl_b = to_tensor(pcl_b, device)
 
     # Compute pairwise distances
-    # Efficient batched squared L2 norms
     diff = pcl_a.unsqueeze(1) - pcl_b.unsqueeze(0)
     dist = torch.sum(diff ** 2, dim=2)
 
@@ -39,15 +29,12 @@ def chamfer_distance(pcl_a, pcl_b, device="cuda"):
     cd_ab = torch.mean(torch.min(dist, dim=1)[0])
     cd_ba = torch.mean(torch.min(dist, dim=0)[0])
 
-    return cd_ab + cd_ba
+    return float(cd_ab + cd_ba)
 
 
-def fscore(pcl_a, pcl_b, tau=0.01, device="cuda"):
-    """
-    Computes the F-score between two point clouds:
-    Precision, Recall, and F-score.
-    """
-
+def fscore(pcl_a, pcl_b, tau=0.01, device="cuda") -> tuple[float, float, float]:
+    """Computes precision, recall, and F-score between two point clouds."""
+    # Convert to tensors
     pcl_a = to_tensor(pcl_a, device)
     pcl_b = to_tensor(pcl_b, device)
 
@@ -68,26 +55,22 @@ def fscore(pcl_a, pcl_b, tau=0.01, device="cuda"):
     return precision.item(), recall.item(), f.item()
 
 
-def normalize_points(pts):
+def normalize_points(pts: np.ndarray) -> np.ndarray:
+    """Normalize points from a point cloud (for consistent positioning)."""
     pts = pts - pts.mean(axis=0)   # center at origin
     scale = np.max(np.linalg.norm(pts, axis=1))
     pts = pts / scale
     return pts
 
-def evaluate_pointcloud(pred_pts, gt_pts, tau=0.01):
-    """
-    Master evaluation function with GPU→CPU fallback.
-    pred_pts: numpy array, shape [N, 3]
-    gt_pts:   numpy array, shape [M, 3]
-    """
-
-    # Try CUDA first
+def evaluate_pointcloud(pred_pts: np.ndarray, gt_pts: np.ndarray, tau=0.01) -> dict:
+    """Main evaluation function; calculates metrics between pred_pts and gt_pts."""
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    # Normalize point clouds (match coordinate systems/alignment)
+    # Normalize point clouds to match the coordinates
     pred_pts, gt_pts = normalize_points(pred_pts), normalize_points(gt_pts)
 
     try:
+        # Calculate metrics
         cd = chamfer_distance(pred_pts, gt_pts, device=device)
         prec, rec, f = fscore(pred_pts, gt_pts, tau=tau, device=device)
         return {
@@ -99,9 +82,10 @@ def evaluate_pointcloud(pred_pts, gt_pts, tau=0.01):
         }
 
     except RuntimeError:
-        # Fallback to CPU if CUDA OOM or unavailable
-        print("[WARN] CUDA failed — falling back to CPU")
+        # Fallback to CPU if something goes wrong
+        print("WARNING: Evaluation failed, falling back to CPU")
 
+        # Re-calculate metrics
         device = "cpu"
         cd = chamfer_distance(pred_pts, gt_pts, device=device)
         prec, rec, f = fscore(pred_pts, gt_pts, tau=tau, device=device)
@@ -121,10 +105,10 @@ if __name__ == "__main__":
     GROUND_TRUTH_PATH = TESTING_FOLDER + r"db_ball_013_points.ply"
     SPAR3D_PATH = TESTING_FOLDER + r"spar3d_ball_013_points.ply"
     
-    # Load ground truth (~16k points)
+    # Load ground truth
     gt = load_ply_pointcloud(GROUND_TRUTH_PATH)
 
-    # Load SPAR3D output (512 pts)
+    # Load SPAR3D output
     pred = load_ply_pointcloud(SPAR3D_PATH)
 
     # Evaluate the reconstruction at each threshold
