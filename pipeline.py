@@ -1,4 +1,3 @@
-import json
 import shutil
 import subprocess
 import tempfile
@@ -9,8 +8,7 @@ import numpy as np
 from PIL import Image
 
 from distortion import distort_image
-from evaluation import evaluate_pointcloud
-from loading_things import load_ply_pointcloud, load_dataset_relations
+from loading_things import load_dataset_relations
 from parse_results import parse_results
 from paths import fix_path
 
@@ -141,11 +139,11 @@ from loading_things import load_ply_pointcloud
 
 
 def reevaluate_results_with_folder(
-    old_json_path: Path,
-    new_json_path: Path,
-    new_taus: list[float],
-    spar3d_outputs_root: Path,
-    object_relations_path: Path,
+        old_json_path: Path,
+        new_json_path: Path,
+        new_taus: list[float],
+        spar3d_outputs_root: Path,
+        object_relations_path: Path,
 ):
     """
     Re-run evaluations for new tau values using already-generated point clouds in spar3d_outputs.
@@ -194,19 +192,20 @@ def reevaluate_results_with_folder(
     print(f"[DONE] Saved updated results → {new_json_path}")
 
 
-
-
 # -------------------------
 # Example usage
 # -------------------------
 if __name__ == "__main__":
-    new_taus = [0.1, 0.2, 0.5]   # <--- CHANGE THESE
+    new_taus = [0.1, 0.2, 0.5]
 
     reevaluate_results_with_folder(
-        old_json_path=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs\pipeline_results_20251201_231844.json"),
+        old_json_path=Path(
+            r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs\pipeline_results_20251201_231844.json"),
         new_json_path=Path("pipeline_results_re-evaluated.json"),
-        spar3d_outputs_root=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs"),
-        object_relations_path=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\object_relations.json"),
+        spar3d_outputs_root=Path(
+            r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs"),
+        object_relations_path=Path(
+            r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\object_relations.json"),
         new_taus=new_taus
     )
 

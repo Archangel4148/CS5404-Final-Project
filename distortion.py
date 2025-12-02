@@ -29,8 +29,9 @@ if __name__ == "__main__":
     # Define some distortion levels to test
     distortions = [
         {"blur": 0, "noise": 0, "exposure": 1.0},
-        {"blur": 0, "noise": 0, "exposure": 2.5},
-        {"blur": 0, "noise": 0, "exposure": 7.0}
+        {"blur": 10, "noise": 0, "exposure": 1.0},
+        {"blur": 0, "noise": 150, "exposure": 1.0},
+        {"blur": 0, "noise": 0, "exposure": 7.0},
     ]
 
     for i, params in enumerate(distortions):
