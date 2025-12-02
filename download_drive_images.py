@@ -4,22 +4,6 @@ import tarfile
 import gdown
 
 
-def get_drive_filename(file_id: str, out_dir: str) -> tuple[str, str] | None:
-    i = 1
-    while True:
-        fname = f"image_{i}.tar.gz"
-        extract_name = f"image_{i}"
-
-        full_file = os.path.join(out_dir, fname)
-
-        # File OR extraction folder existence means "taken"
-        if os.path.exists(full_file) or os.path.exists(full_extract):
-            i += 1
-            continue
-
-        return fname, full_extract
-
-
 def download_files(wanted_files: list[str], out_dir, unzip=False):
     """Download selected files (expects wanted_files to be a list of file IDs)"""
     os.makedirs(out_dir, exist_ok=True)

@@ -7,6 +7,9 @@ openxlab dataset download --dataset-repo omniobject3d/OmniObject3D-New `
                           --source-path /raw/point_clouds/ply_files/16384 `
                           --target-path D:\Programming\CS5404-Final-Project\datasets\omniobject3d\ply_16384
 
+(Or on Ubuntu WSL, on Josh's PC):
+openxlab dataset download --dataset-repo omniobject3d/OmniObject3D-New --source-path /raw/point_clouds/ply_files/16384 --target-path /mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/ply_16384
+
 3. Run main.py to test CUDA, download the desired number of .tar.gz files, unpack them, organize the file system, build relations, and test the loaded .ply file
 
 4. Profit

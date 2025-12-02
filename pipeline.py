@@ -1,5 +1,7 @@
 import json
 import shutil
+import subprocess
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -8,15 +10,38 @@ from PIL import Image
 from distortion import distort_image
 from evaluation import evaluate_pointcloud
 from loading_things import load_ply_pointcloud
+from paths import fix_path
+
+SPAR3D_DIR = fix_path(Path("/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/stable-point-aware-3d"))
 
 
-def run_spar3d_reconstruction(image_path: Path) -> np.ndarray:
+def run_spar3d_reconstruction(image_path: Path, output_file_path: Path) -> np.ndarray:
     """Run SPAR3D on the provided image, and output the resulting point cloud"""
-    # TODO: Actually do the SPAR3D pipeline.
 
-    print(f"[PLACEHOLDER] Running SPAR3D on {image_path}")
-    fake_pts = np.random.rand(512, 3) - 0.5
-    return fake_pts
+    # Create a temporary folder for SPAR3D output
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmpdir_path = Path(tmpdir)
+        cmd = [
+            "python", str((SPAR3D_DIR / "run.py").resolve()), str(image_path),
+            "--output-dir", str(tmpdir_path)
+        ]
+        print(f"[SPAR3D] Running command: {' '.join(cmd)}")
+        subprocess.run(cmd, check=True)
+
+        # SPAR3D creates a folder (named '0') in the output directory
+        output_subfolder = tmpdir_path / "0"
+        ply_files = list(output_subfolder.glob("*.ply"))
+        if not ply_files:
+            raise RuntimeError(f"No .ply file generated for {image_path}")
+
+        # Move the .ply file to the desired location
+        output_file_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(ply_files[0]), str(output_file_path))
+        print(f"[SPAR3D] Saved .ply → {output_file_path}")
+
+    # Load the point cloud as numpy array
+    pts = load_ply_pointcloud(output_file_path)
+    return pts
 
 
 def process_one_object(object_id: str, img_dir: Path, gt_pointcloud_path: Path, distortion_levels: list[dict],
@@ -29,7 +54,7 @@ def process_one_object(object_id: str, img_dir: Path, gt_pointcloud_path: Path, 
         3. evaluate results
     """
 
-    results = dict(object_id=object_id, evaluations=[])
+    results = dict(object_id=object_id, images=[])
 
     # Load ground truth
     gt_pts = load_ply_pointcloud(gt_pointcloud_path)
@@ -48,51 +73,54 @@ def process_one_object(object_id: str, img_dir: Path, gt_pointcloud_path: Path, 
     output_root = Path(output_root)
     (output_root / object_id).mkdir(parents=True, exist_ok=True)
 
-    for distortion in all_levels:
-        blur, noise, exposure = distortion["blur"], distortion["noise"], distortion["exposure"]
+    for i, img_path in enumerate(images):
 
-        print(f"\n[INFO] Distortion: blur={blur}, noise={noise}, exposure={exposure}")
+        img_results = dict(
+            image_idx=i,
+            original_image=str(img_path),
+            distortions=[],
+        )
 
-        # Make a temporary folder for this distortion
-        distort_dir = (output_root / object_id / f"blur{blur}_noise{noise}_exp{exposure}")
-        distort_dir.mkdir(parents=True, exist_ok=True)
+        for distortion in all_levels:
+            blur, noise, exposure = distortion["blur"], distortion["noise"], distortion["exposure"]
+            print(f"\n[INFO] Image {i}, Distortion: blur={blur}, noise={noise}, exposure={exposure}")
 
-        distorted_paths = []
-        for i, img_path in enumerate(images):
+            # Make a temporary folder for this distortion
+            distort_dir = (output_root / object_id / f"blur{blur}_noise{noise}_exp{exposure}")
+            distort_dir.mkdir(parents=True, exist_ok=True)
+
             # Distort the image
             img = Image.open(img_path).convert("RGB")
             img = distort_image(img, blur=blur, noise=noise, exposure=exposure)
 
             # Save the distorted image to the temp directory
-            out_path = distort_dir / f"img_{i}.png"
-            img.save(out_path)
+            dist_path = distort_dir / f"img_{i}.png"
+            img.save(dist_path)
 
-            distorted_paths.append((img_path, out_path))
+            # Run SPAR3D on the distorted image
+            out_ply = output_root / object_id / f"pts_img{i}_blur{blur}_noise{noise}_exp{exposure}.ply"
+            pred_pts = run_spar3d_reconstruction(dist_path, output_file_path=out_ply)
 
-        print(f"[INFO] Saved {len(distorted_paths)} distorted images → {distort_dir}")
-
-        # Run SPAR3D on each distorted image
-        for idx, (orig_path, dist_path) in enumerate(distorted_paths):
-            pred_pts = run_spar3d_reconstruction(dist_path)
+            img_results["distortions"].append(dict(
+                distorted_image=str(dist_path),
+                distortion=dict(blur=blur, noise=noise, exposure=exposure),
+                evaluations=[],
+            ))
 
             # Evaluate and save results for each tau
             for tau in taus:
                 metrics = evaluate_pointcloud(pred_pts, gt_pts, tau=tau)
-                results["evaluations"].append(dict(
-                    image_idx=idx,
-                    original_image=str(orig_path),
-                    distorted_image=str(dist_path),
-                    distortion=dict(blur=blur, noise=noise, exposure=exposure),
+                img_results["distortions"][-1]["evaluations"].append(dict(
                     tau=tau,
                     metrics=metrics,
                 ))
 
-        # Clean up the distorted image folder (unless keeping it)
-        if keep_distorted:
-            print(f"[KEEP] Keeping distorted images: {distort_dir}")
-        else:
-            print(f"[CLEANUP] Removing folder: {distort_dir}")
-            shutil.rmtree(distort_dir, ignore_errors=True)
+            # Clean up the distorted image folder
+            if not keep_distorted:
+                print(f"[CLEANUP] Removing folder: {distort_dir}")
+                shutil.rmtree(distort_dir, ignore_errors=True)
+
+        results["images"].append(img_results)
 
     return results
 

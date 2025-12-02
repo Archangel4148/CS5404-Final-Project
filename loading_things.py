@@ -4,35 +4,32 @@ from plyfile import PlyData
 import numpy as np
 
 
-RELATION_FILE = r"D:\Programming\CS5404-Final-Project\datasets\omniobject3d\object_relations.json"
-def load_dataset_relations(json_path=RELATION_FILE):
+def load_dataset_relations(json_path) -> dict[str: dict[str: Path]]:
     """
-    Loads your dataset relation file and returns:
-        - object_ids: list[str]
-        - ply_paths: list[Path]
-        - image_dirs: list[Path]
+    Loads your dataset relation file and returns grouped data
     """
 
     with open(json_path, "r") as f:
         data = json.load(f)
 
-    object_ids = []
-    ply_paths = []
-    image_dirs = []
+    grouped_data = {}
 
-    for obj_id, fields in data.items():
-        pc_path = fields.get("point_cloud")
-        img_dir = fields.get("images")
+    for group_name, group_objs in data.items():
+        grouped_data[group_name] = {}
+        for obj_id, fields in group_objs.items():
+            pc_path = fields.get("point_cloud")
+            img_dir = fields.get("images")
 
-        if pc_path is None or img_dir is None:
-            print(f"[WARN] Missing fields for {obj_id}, skipping")
-            continue
+            if pc_path is None or img_dir is None:
+                print(f"[WARN] Missing fields for {obj_id}, skipping")
+                continue
 
-        object_ids.append(obj_id)
-        ply_paths.append(Path(pc_path))
-        image_dirs.append(Path(img_dir))
+            grouped_data[group_name][obj_id] = {
+                "point_cloud": Path(pc_path),
+                "images": Path(img_dir)
+            }
 
-    return object_ids, ply_paths, image_dirs
+    return grouped_data
 
 
 def load_ply_pointcloud(path):
