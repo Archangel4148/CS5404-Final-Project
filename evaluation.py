@@ -102,8 +102,8 @@ def evaluate_pointcloud(pred_pts: np.ndarray, gt_pts: np.ndarray, tau=0.01) -> d
 
 if __name__ == "__main__":
     TESTING_FOLDER = os.path.join(os.getcwd(), "examples_for_testing\\")
-    GROUND_TRUTH_PATH = TESTING_FOLDER + r"db_ball_013_points.ply"
-    SPAR3D_PATH = TESTING_FOLDER + r"spar3d_ball_013_points.ply"
+    GROUND_TRUTH_PATH = TESTING_FOLDER + r"db_ball_013.ply"
+    SPAR3D_PATH = TESTING_FOLDER + r"spar3d_ball_013.ply"
     
     # Load ground truth
     gt = load_ply_pointcloud(GROUND_TRUTH_PATH)
