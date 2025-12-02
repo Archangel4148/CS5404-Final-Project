@@ -11,6 +11,7 @@ from PIL import Image
 from distortion import distort_image
 from evaluation import evaluate_pointcloud
 from loading_things import load_ply_pointcloud, load_dataset_relations
+from parse_results import parse_results
 from paths import fix_path
 
 SPAR3D_DIR = fix_path(Path("/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/stable-point-aware-3d"))
@@ -207,4 +208,9 @@ if __name__ == "__main__":
         spar3d_outputs_root=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs"),
         object_relations_path=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\object_relations.json"),
         new_taus=new_taus
+    )
+
+    parse_results(
+        json_path=Path("pipeline_results_re-evaluated.json"),
+        csv_path=Path("parsed_results-re-evaluated.csv"),
     )
