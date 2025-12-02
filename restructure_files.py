@@ -7,13 +7,9 @@ from pathlib import Path
 
 def move_images_and_build_image_relations(source_root: Path, dest_root: Path):
     """
-    Moves Google Drive images into:
-         dest_root/category/object_id/*.png
+    Moves images into dest_root/category/object_id/*.png
+    Handles both standard and nested layouts.
     Builds { object_id: image_folder } mapping.
-
-    After processing each "image_X/" folder:
-        - Deletes that folder entirely
-        - Keeps any .tar.gz files
     """
     os.makedirs(dest_root, exist_ok=True)
     relations = {}
@@ -22,22 +18,26 @@ def move_images_and_build_image_relations(source_root: Path, dest_root: Path):
         if not img_folder.is_dir():
             continue
 
-        # e.g., "image_1/", "image_2/", ...
         print(f"[PROCESS] Handling folder: {img_folder.name}")
 
         for object_folder in img_folder.iterdir():
             if not object_folder.is_dir():
                 continue
 
-            object_id = object_folder.name  # e.g., anise_001
-            category = object_id.split("_")[0]  # e.g., anise
-
-            final_dir = Path(dest_root) / category / object_id
+            object_id = object_folder.name
+            category = object_id.split("_")[0]
+            final_dir = dest_root / category / object_id
             final_dir.mkdir(parents=True, exist_ok=True)
 
-            pngs = list(object_folder.glob("*.png"))
+            # Detect the nested "images/" layout
+            nested_images_dir = object_folder / "render" / "images"
+            if nested_images_dir.is_dir():
+                pngs = list(nested_images_dir.glob("*.png"))
+            else:
+                pngs = list(object_folder.glob("*.png"))
+
             if not pngs:
-                print(f"[WARN] No PNGs inside {object_folder}")
+                print(f"[WARN] No PNGs found for {object_id} in either layout")
                 continue
 
             for png in pngs:
@@ -46,13 +46,12 @@ def move_images_and_build_image_relations(source_root: Path, dest_root: Path):
             relations[object_id] = str(final_dir)
             print(f"[OK] Moved images for {object_id} → {final_dir}")
 
-        # ---------------------------------------------------------------------
-        # CLEANUP: delete extracted folder, keep only original .tar.gz files
-        # ---------------------------------------------------------------------
-        print(f"[CLEANUP] Deleting extracted folder: {img_folder.name}")
+        # Cleanup: delete extracted folder but keep .tar.gz
         shutil.rmtree(img_folder, ignore_errors=True)
+        print(f"[CLEANUP] Done with folder: {img_folder.name}")
 
     return relations
+
 
 
 def merge_with_pointclouds(image_map, pointcloud_root, output_path):

@@ -128,7 +128,7 @@ if __name__ == "__main__":
     pred = load_ply_pointcloud(SPAR3D_PATH)
 
     # Evaluate the reconstruction at each threshold
-    taus_to_test = [0.1, 0.2, 0.5]
+    taus_to_test = [0.01, 0.05, 0.075, 0.1, 0.2, 0.5]
     for tau in taus_to_test:
         results = evaluate_pointcloud(pred, gt, tau)
         print(f"Results (tau = {tau}): {results}")

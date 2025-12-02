@@ -1,0 +1,2999 @@
+{
+  "burrito": {
+    "burrito_001": {
+      "object_id": "burrito_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/burrito/burrito_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.08779636770486832,
+                    "precision": 0.41015625,
+                    "recall": 0.182861328125,
+                    "fscore": 0.25294938683509827,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.08779636770486832,
+                    "precision": 0.767578125,
+                    "recall": 0.4776611328125,
+                    "fscore": 0.5888703465461731,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.08779636770486832,
+                    "precision": 0.99609375,
+                    "recall": 1.0,
+                    "fscore": 0.9980430603027344,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.09051387012004852,
+                    "precision": 0.416015625,
+                    "recall": 0.169921875,
+                    "fscore": 0.24128906428813934,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.09051387012004852,
+                    "precision": 0.697265625,
+                    "recall": 0.45892333984375,
+                    "fscore": 0.5535279512405396,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.09051387012004852,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.06970508396625519,
+                    "precision": 0.392578125,
+                    "recall": 0.1427001953125,
+                    "fscore": 0.20931531488895416,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.06970508396625519,
+                    "precision": 0.861328125,
+                    "recall": 0.476318359375,
+                    "fscore": 0.6134153008460999,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.06970508396625519,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.0727953165769577,
+                    "precision": 0.384765625,
+                    "recall": 0.11468505859375,
+                    "fscore": 0.1767016053199768,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.0727953165769577,
+                    "precision": 0.7265625,
+                    "recall": 0.4000244140625,
+                    "fscore": 0.5159703493118286,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.0727953165769577,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.03699116408824921,
+                    "precision": 0.701171875,
+                    "recall": 0.39678955078125,
+                    "fscore": 0.50678950548172,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.03699116408824921,
+                    "precision": 0.955078125,
+                    "recall": 0.725341796875,
+                    "fscore": 0.8245059251785278,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.03699116408824921,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.04286126047372818,
+                    "precision": 0.529296875,
+                    "recall": 0.39459228515625,
+                    "fscore": 0.4521245062351227,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.04286126047372818,
+                    "precision": 0.8671875,
+                    "recall": 0.7935791015625,
+                    "fscore": 0.8287520408630371,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.04286126047372818,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.07503817975521088,
+                    "precision": 0.5078125,
+                    "recall": 0.20037841796875,
+                    "fscore": 0.2873650789260864,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.07503817975521088,
+                    "precision": 0.94921875,
+                    "recall": 0.488037109375,
+                    "fscore": 0.6446367502212524,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.07503817975521088,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/burrito_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.08484052121639252,
+                    "precision": 0.48046875,
+                    "recall": 0.12298583984375,
+                    "fscore": 0.1958419233560562,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.08484052121639252,
+                    "precision": 0.927734375,
+                    "recall": 0.40594482421875,
+                    "fscore": 0.5647669434547424,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.08484052121639252,
+                    "precision": 1.0,
+                    "recall": 0.99957275390625,
+                    "fscore": 0.9997863173484802,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "fork": {
+    "fork_001": {
+      "object_id": "fork_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/fork/fork_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.4752407968044281,
+                    "precision": 0.072265625,
+                    "recall": 0.080322265625,
+                    "fscore": 0.07608125358819962,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.4752407968044281,
+                    "precision": 0.1640625,
+                    "recall": 0.1856689453125,
+                    "fscore": 0.17419829964637756,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.4752407968044281,
+                    "precision": 0.671875,
+                    "recall": 0.557373046875,
+                    "fscore": 0.6092911958694458,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.4751715660095215,
+                    "precision": 0.099609375,
+                    "recall": 0.08197021484375,
+                    "fscore": 0.08993303775787354,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.4751715660095215,
+                    "precision": 0.208984375,
+                    "recall": 0.183349609375,
+                    "fscore": 0.19532951712608337,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.4751715660095215,
+                    "precision": 0.681640625,
+                    "recall": 0.5513916015625,
+                    "fscore": 0.6096367835998535,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.3092211186885834,
+                    "precision": 0.60546875,
+                    "recall": 0.10418701171875,
+                    "fscore": 0.17778190970420837,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.3092211186885834,
+                    "precision": 0.78125,
+                    "recall": 0.2005615234375,
+                    "fscore": 0.3191828429698944,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.3092211186885834,
+                    "precision": 0.908203125,
+                    "recall": 0.5780029296875,
+                    "fscore": 0.7064216732978821,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.3821207880973816,
+                    "precision": 0.22265625,
+                    "recall": 0.11285400390625,
+                    "fscore": 0.14978766441345215,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.3821207880973816,
+                    "precision": 0.451171875,
+                    "recall": 0.207763671875,
+                    "fscore": 0.2845107614994049,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.3821207880973816,
+                    "precision": 0.796875,
+                    "recall": 0.58038330078125,
+                    "fscore": 0.6716139316558838,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.442354679107666,
+                    "precision": 0.12890625,
+                    "recall": 0.068359375,
+                    "fscore": 0.08934096246957779,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.442354679107666,
+                    "precision": 0.30078125,
+                    "recall": 0.1865234375,
+                    "fscore": 0.23025739192962646,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.442354679107666,
+                    "precision": 0.728515625,
+                    "recall": 0.55352783203125,
+                    "fscore": 0.6290795803070068,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.32359790802001953,
+                    "precision": 0.255859375,
+                    "recall": 0.11553955078125,
+                    "fscore": 0.1591920405626297,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.32359790802001953,
+                    "precision": 0.548828125,
+                    "recall": 0.2154541015625,
+                    "fscore": 0.3094335198402405,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.32359790802001953,
+                    "precision": 0.90234375,
+                    "recall": 0.60137939453125,
+                    "fscore": 0.7217431664466858,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.5136903524398804,
+                    "precision": 0.076171875,
+                    "recall": 0.11260986328125,
+                    "fscore": 0.09087429940700531,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.5136903524398804,
+                    "precision": 0.12890625,
+                    "recall": 0.2054443359375,
+                    "fscore": 0.15841491520404816,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.5136903524398804,
+                    "precision": 0.568359375,
+                    "recall": 0.56927490234375,
+                    "fscore": 0.5688167810440063,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/fork_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.729677677154541,
+                    "precision": 0.015625,
+                    "recall": 0.081298828125,
+                    "fscore": 0.026212217286229134,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.729677677154541,
+                    "precision": 0.021484375,
+                    "recall": 0.1776123046875,
+                    "fscore": 0.0383320227265358,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.729677677154541,
+                    "precision": 0.189453125,
+                    "recall": 0.53485107421875,
+                    "fscore": 0.27979737520217896,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "rubik_cube": {
+    "rubik_cube_001": {
+      "object_id": "rubik_cube_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/rubik/rubik_cube_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.03871116042137146,
+                    "precision": 0.54296875,
+                    "recall": 0.37481689453125,
+                    "fscore": 0.44348886609077454,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.03871116042137146,
+                    "precision": 0.921875,
+                    "recall": 0.82489013671875,
+                    "fscore": 0.8706901669502258,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.03871116042137146,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.03992599993944168,
+                    "precision": 0.560546875,
+                    "recall": 0.384765625,
+                    "fscore": 0.45631295442581177,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.03992599993944168,
+                    "precision": 0.86328125,
+                    "recall": 0.851806640625,
+                    "fscore": 0.8575055599212646,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.03992599993944168,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.050567883998155594,
+                    "precision": 0.546875,
+                    "recall": 0.2685546875,
+                    "fscore": 0.36021706461906433,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.050567883998155594,
+                    "precision": 0.8984375,
+                    "recall": 0.68743896484375,
+                    "fscore": 0.7789016962051392,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.050567883998155594,
+                    "precision": 1.0,
+                    "recall": 0.99969482421875,
+                    "fscore": 0.999847412109375,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.09004834294319153,
+                    "precision": 0.392578125,
+                    "recall": 0.1622314453125,
+                    "fscore": 0.22958694398403168,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.09004834294319153,
+                    "precision": 0.80859375,
+                    "recall": 0.4661865234375,
+                    "fscore": 0.5914046764373779,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.09004834294319153,
+                    "precision": 1.0,
+                    "recall": 0.9720458984375,
+                    "fscore": 0.9858248233795166,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.047897063195705414,
+                    "precision": 0.552734375,
+                    "recall": 0.31317138671875,
+                    "fscore": 0.3998139202594757,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.047897063195705414,
+                    "precision": 0.919921875,
+                    "recall": 0.72943115234375,
+                    "fscore": 0.8136762380599976,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.047897063195705414,
+                    "precision": 1.0,
+                    "recall": 0.9984130859375,
+                    "fscore": 0.9992058873176575,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.0494767501950264,
+                    "precision": 0.5546875,
+                    "recall": 0.282958984375,
+                    "fscore": 0.3747495114803314,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.0494767501950264,
+                    "precision": 0.935546875,
+                    "recall": 0.7119140625,
+                    "fscore": 0.808552086353302,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.0494767501950264,
+                    "precision": 1.0,
+                    "recall": 0.99700927734375,
+                    "fscore": 0.9985023736953735,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05001118779182434,
+                    "precision": 0.564453125,
+                    "recall": 0.32421875,
+                    "fscore": 0.411864697933197,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05001118779182434,
+                    "precision": 0.951171875,
+                    "recall": 0.6865234375,
+                    "fscore": 0.7974643111228943,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05001118779182434,
+                    "precision": 1.0,
+                    "recall": 0.99713134765625,
+                    "fscore": 0.9985635876655579,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/rubik_cube_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.06391884386539459,
+                    "precision": 0.49609375,
+                    "recall": 0.273681640625,
+                    "fscore": 0.3527567982673645,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.06391884386539459,
+                    "precision": 0.90234375,
+                    "recall": 0.63360595703125,
+                    "fscore": 0.7444649934768677,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.06391884386539459,
+                    "precision": 1.0,
+                    "recall": 0.98785400390625,
+                    "fscore": 0.9938898682594299,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "dinosaur": {
+    "dinosaur_001": {
+      "object_id": "dinosaur_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/dinosaur/dinosaur_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.059792615473270416,
+                    "precision": 0.373046875,
+                    "recall": 0.55206298828125,
+                    "fscore": 0.44523441791534424,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.059792615473270416,
+                    "precision": 0.62890625,
+                    "recall": 0.969482421875,
+                    "fscore": 0.7629102468490601,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.059792615473270416,
+                    "precision": 0.9765625,
+                    "recall": 1.0,
+                    "fscore": 0.9881423115730286,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05313912406563759,
+                    "precision": 0.40234375,
+                    "recall": 0.57135009765625,
+                    "fscore": 0.47217950224876404,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05313912406563759,
+                    "precision": 0.66015625,
+                    "recall": 0.96923828125,
+                    "fscore": 0.7853821516036987,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05313912406563759,
+                    "precision": 0.974609375,
+                    "recall": 1.0,
+                    "fscore": 0.9871414303779602,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.03134993091225624,
+                    "precision": 0.677734375,
+                    "recall": 0.486328125,
+                    "fscore": 0.5662948489189148,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.03134993091225624,
+                    "precision": 0.90234375,
+                    "recall": 0.8865966796875,
+                    "fscore": 0.8944008946418762,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.03134993091225624,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.0408758670091629,
+                    "precision": 0.560546875,
+                    "recall": 0.33843994140625,
+                    "fscore": 0.4220561385154724,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.0408758670091629,
+                    "precision": 0.84765625,
+                    "recall": 0.830810546875,
+                    "fscore": 0.8391488790512085,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.0408758670091629,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05879855155944824,
+                    "precision": 0.2109375,
+                    "recall": 0.37445068359375,
+                    "fscore": 0.2698574960231781,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05879855155944824,
+                    "precision": 0.59375,
+                    "recall": 0.916259765625,
+                    "fscore": 0.7205638885498047,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05879855155944824,
+                    "precision": 0.99609375,
+                    "recall": 1.0,
+                    "fscore": 0.9980430603027344,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.11125794053077698,
+                    "precision": 0.111328125,
+                    "recall": 0.25433349609375,
+                    "fscore": 0.15486706793308258,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.11125794053077698,
+                    "precision": 0.349609375,
+                    "recall": 0.78814697265625,
+                    "fscore": 0.48436304926872253,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.11125794053077698,
+                    "precision": 0.966796875,
+                    "recall": 1.0,
+                    "fscore": 0.9831181764602661,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.04676780477166176,
+                    "precision": 0.412109375,
+                    "recall": 0.6365966796875,
+                    "fscore": 0.5003260374069214,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.04676780477166176,
+                    "precision": 0.6953125,
+                    "recall": 0.9739990234375,
+                    "fscore": 0.8113928437232971,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.04676780477166176,
+                    "precision": 0.984375,
+                    "recall": 1.0,
+                    "fscore": 0.9921259880065918,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/dinosaur_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05047537386417389,
+                    "precision": 0.54296875,
+                    "recall": 0.44970703125,
+                    "fscore": 0.4919569194316864,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05047537386417389,
+                    "precision": 0.79296875,
+                    "recall": 0.801513671875,
+                    "fscore": 0.7972183227539062,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05047537386417389,
+                    "precision": 0.994140625,
+                    "recall": 1.0,
+                    "fscore": 0.9970617294311523,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "green_bean_cake": {
+    "green_bean_cake_001": {
+      "object_id": "green_bean_cake_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/green/green_bean_cake_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05121506378054619,
+                    "precision": 0.583984375,
+                    "recall": 0.37554931640625,
+                    "fscore": 0.4571281671524048,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05121506378054619,
+                    "precision": 0.857421875,
+                    "recall": 0.71099853515625,
+                    "fscore": 0.777375340461731,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05121506378054619,
+                    "precision": 0.99609375,
+                    "recall": 1.0,
+                    "fscore": 0.9980430603027344,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05291493982076645,
+                    "precision": 0.587890625,
+                    "recall": 0.4063720703125,
+                    "fscore": 0.4805617928504944,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05291493982076645,
+                    "precision": 0.82421875,
+                    "recall": 0.744140625,
+                    "fscore": 0.7821353673934937,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05291493982076645,
+                    "precision": 0.998046875,
+                    "recall": 1.0,
+                    "fscore": 0.9990224838256836,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.11024948954582214,
+                    "precision": 0.322265625,
+                    "recall": 0.09393310546875,
+                    "fscore": 0.1454661339521408,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.11024948954582214,
+                    "precision": 0.625,
+                    "recall": 0.2833251953125,
+                    "fscore": 0.3899005651473999,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.11024948954582214,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.10326151549816132,
+                    "precision": 0.3203125,
+                    "recall": 0.10675048828125,
+                    "fscore": 0.16013336181640625,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.10326151549816132,
+                    "precision": 0.583984375,
+                    "recall": 0.28594970703125,
+                    "fscore": 0.3839145302772522,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.10326151549816132,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05583435297012329,
+                    "precision": 0.453125,
+                    "recall": 0.35174560546875,
+                    "fscore": 0.3960505723953247,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05583435297012329,
+                    "precision": 0.7578125,
+                    "recall": 0.7244873046875,
+                    "fscore": 0.7407752871513367,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05583435297012329,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.05106815695762634,
+                    "precision": 0.427734375,
+                    "recall": 0.3648681640625,
+                    "fscore": 0.39380812644958496,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.05106815695762634,
+                    "precision": 0.796875,
+                    "recall": 0.88775634765625,
+                    "fscore": 0.8398642539978027,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.05106815695762634,
+                    "precision": 0.994140625,
+                    "recall": 1.0,
+                    "fscore": 0.9970617294311523,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.058142468333244324,
+                    "precision": 0.470703125,
+                    "recall": 0.33319091796875,
+                    "fscore": 0.39018577337265015,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.058142468333244324,
+                    "precision": 0.80859375,
+                    "recall": 0.70758056640625,
+                    "fscore": 0.7547222375869751,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.058142468333244324,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "fscore": 1.0,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/green_bean_cake_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.06548570841550827,
+                    "precision": 0.423828125,
+                    "recall": 0.29632568359375,
+                    "fscore": 0.3487898111343384,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.06548570841550827,
+                    "precision": 0.7890625,
+                    "recall": 0.67889404296875,
+                    "fscore": 0.7298442721366882,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.06548570841550827,
+                    "precision": 0.99609375,
+                    "recall": 1.0,
+                    "fscore": 0.9980430603027344,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "skateboard": {
+    "skateboard_001": {
+      "object_id": "skateboard_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/skateboard/skateboard_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.20069599151611328,
+                    "precision": 0.107421875,
+                    "recall": 0.06219482421875,
+                    "fscore": 0.07877861708402634,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.20069599151611328,
+                    "precision": 0.443359375,
+                    "recall": 0.3577880859375,
+                    "fscore": 0.39600375294685364,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.20069599151611328,
+                    "precision": 0.875,
+                    "recall": 0.91162109375,
+                    "fscore": 0.8929352164268494,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.1993555724620819,
+                    "precision": 0.091796875,
+                    "recall": 0.056640625,
+                    "fscore": 0.0700555071234703,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.1993555724620819,
+                    "precision": 0.455078125,
+                    "recall": 0.361328125,
+                    "fscore": 0.402820348739624,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.1993555724620819,
+                    "precision": 0.880859375,
+                    "recall": 0.9110107421875,
+                    "fscore": 0.8956813812255859,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.2489253282546997,
+                    "precision": 0.029296875,
+                    "recall": 0.00787353515625,
+                    "fscore": 0.012411483563482761,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.2489253282546997,
+                    "precision": 0.630859375,
+                    "recall": 0.24383544921875,
+                    "fscore": 0.35172468423843384,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.2489253282546997,
+                    "precision": 0.869140625,
+                    "recall": 0.8079833984375,
+                    "fscore": 0.837446928024292,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.2894643247127533,
+                    "precision": 0.0234375,
+                    "recall": 0.0142822265625,
+                    "fscore": 0.017748786136507988,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.2894643247127533,
+                    "precision": 0.203125,
+                    "recall": 0.1796875,
+                    "fscore": 0.19068877398967743,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.2894643247127533,
+                    "precision": 0.81640625,
+                    "recall": 0.81280517578125,
+                    "fscore": 0.814601719379425,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.1650695502758026,
+                    "precision": 0.189453125,
+                    "recall": 0.140625,
+                    "fscore": 0.16142751276493073,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.1650695502758026,
+                    "precision": 0.7578125,
+                    "recall": 0.4677734375,
+                    "fscore": 0.5784736275672913,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.1650695502758026,
+                    "precision": 0.892578125,
+                    "recall": 0.914306640625,
+                    "fscore": 0.9033117294311523,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.20185039937496185,
+                    "precision": 0.251953125,
+                    "recall": 0.1502685546875,
+                    "fscore": 0.18825754523277283,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.20185039937496185,
+                    "precision": 0.5703125,
+                    "recall": 0.450927734375,
+                    "fscore": 0.5036419630050659,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.20185039937496185,
+                    "precision": 0.869140625,
+                    "recall": 0.910400390625,
+                    "fscore": 0.8892921805381775,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.20716339349746704,
+                    "precision": 0.11328125,
+                    "recall": 0.07330322265625,
+                    "fscore": 0.0890093445777893,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.20716339349746704,
+                    "precision": 0.41015625,
+                    "recall": 0.3465576171875,
+                    "fscore": 0.37568432092666626,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.20716339349746704,
+                    "precision": 0.876953125,
+                    "recall": 0.90850830078125,
+                    "fscore": 0.8924518823623657,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/skateboard_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.18945589661598206,
+                    "precision": 0.421875,
+                    "recall": 0.11993408203125,
+                    "fscore": 0.18677128851413727,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.18945589661598206,
+                    "precision": 0.701171875,
+                    "recall": 0.3885498046875,
+                    "fscore": 0.5000179409980774,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.18945589661598206,
+                    "precision": 0.931640625,
+                    "recall": 0.818603515625,
+                    "fscore": 0.8714718818664551,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pastry": {
+    "pastry_001": {
+      "object_id": "pastry_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/pastry/pastry_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.20137163996696472,
+                    "precision": 0.318359375,
+                    "recall": 0.132568359375,
+                    "fscore": 0.18718910217285156,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.20137163996696472,
+                    "precision": 0.59375,
+                    "recall": 0.33380126953125,
+                    "fscore": 0.4273499846458435,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.20137163996696472,
+                    "precision": 1.0,
+                    "recall": 0.753662109375,
+                    "fscore": 0.859529435634613,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.2074398249387741,
+                    "precision": 0.388671875,
+                    "recall": 0.136962890625,
+                    "fscore": 0.20254985988140106,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.2074398249387741,
+                    "precision": 0.64453125,
+                    "recall": 0.324951171875,
+                    "fscore": 0.4320680499076843,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.2074398249387741,
+                    "precision": 1.0,
+                    "recall": 0.732421875,
+                    "fscore": 0.8455467820167542,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.13042670488357544,
+                    "precision": 0.33984375,
+                    "recall": 0.1385498046875,
+                    "fscore": 0.19684748351573944,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.13042670488357544,
+                    "precision": 0.609375,
+                    "recall": 0.39532470703125,
+                    "fscore": 0.47954824566841125,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.13042670488357544,
+                    "precision": 0.9921875,
+                    "recall": 0.92987060546875,
+                    "fscore": 0.9600188136100769,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.26607921719551086,
+                    "precision": 0.275390625,
+                    "recall": 0.100830078125,
+                    "fscore": 0.14761365950107574,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.26607921719551086,
+                    "precision": 0.529296875,
+                    "recall": 0.255615234375,
+                    "fscore": 0.34474265575408936,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.26607921719551086,
+                    "precision": 0.978515625,
+                    "recall": 0.6689453125,
+                    "fscore": 0.7946451902389526,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.11125656962394714,
+                    "precision": 0.294921875,
+                    "recall": 0.17138671875,
+                    "fscore": 0.21679073572158813,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.11125656962394714,
+                    "precision": 0.5625,
+                    "recall": 0.5291748046875,
+                    "fscore": 0.5453287363052368,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.11125656962394714,
+                    "precision": 1.0,
+                    "recall": 0.998046875,
+                    "fscore": 0.9990224838256836,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.10497459769248962,
+                    "precision": 0.306640625,
+                    "recall": 0.15673828125,
+                    "fscore": 0.20744286477565765,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.10497459769248962,
+                    "precision": 0.62890625,
+                    "recall": 0.419677734375,
+                    "fscore": 0.5034178495407104,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.10497459769248962,
+                    "precision": 1.0,
+                    "recall": 0.99676513671875,
+                    "fscore": 0.9983799457550049,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.12597842514514923,
+                    "precision": 0.27734375,
+                    "recall": 0.15655517578125,
+                    "fscore": 0.2001369297504425,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.12597842514514923,
+                    "precision": 0.5546875,
+                    "recall": 0.4603271484375,
+                    "fscore": 0.5031212568283081,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.12597842514514923,
+                    "precision": 0.9921875,
+                    "recall": 0.95355224609375,
+                    "fscore": 0.9724863171577454,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/pastry_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.27001988887786865,
+                    "precision": 0.271484375,
+                    "recall": 0.0880126953125,
+                    "fscore": 0.13293054699897766,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.27001988887786865,
+                    "precision": 0.53515625,
+                    "recall": 0.21942138671875,
+                    "fscore": 0.3112329840660095,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.27001988887786865,
+                    "precision": 0.974609375,
+                    "recall": 0.6365966796875,
+                    "fscore": 0.770147442817688,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "conch": {
+    "conch_001": {
+      "object_id": "conch_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/conch/conch_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.0905761793255806,
+                    "precision": 0.47265625,
+                    "recall": 0.3427734375,
+                    "fscore": 0.3973708748817444,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.0905761793255806,
+                    "precision": 0.767578125,
+                    "recall": 0.68377685546875,
+                    "fscore": 0.7232581377029419,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.0905761793255806,
+                    "precision": 0.966796875,
+                    "recall": 0.95550537109375,
+                    "fscore": 0.9611179828643799,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.08189976960420609,
+                    "precision": 0.53125,
+                    "recall": 0.3917236328125,
+                    "fscore": 0.45094066858291626,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.08189976960420609,
+                    "precision": 0.822265625,
+                    "recall": 0.690673828125,
+                    "fscore": 0.7507469654083252,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.08189976960420609,
+                    "precision": 0.98046875,
+                    "recall": 0.9591064453125,
+                    "fscore": 0.9696699380874634,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.10867103189229965,
+                    "precision": 0.51171875,
+                    "recall": 0.174560546875,
+                    "fscore": 0.26031938195228577,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.10867103189229965,
+                    "precision": 0.771484375,
+                    "recall": 0.41448974609375,
+                    "fscore": 0.5392568707466125,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.10867103189229965,
+                    "precision": 0.99609375,
+                    "recall": 0.96490478515625,
+                    "fscore": 0.9802512526512146,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.10611728578805923,
+                    "precision": 0.541015625,
+                    "recall": 0.1575927734375,
+                    "fscore": 0.24408568441867828,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.10611728578805923,
+                    "precision": 0.826171875,
+                    "recall": 0.4005126953125,
+                    "fscore": 0.5394904613494873,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.10611728578805923,
+                    "precision": 0.994140625,
+                    "recall": 0.95843505859375,
+                    "fscore": 0.9759613871574402,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.06827327609062195,
+                    "precision": 0.580078125,
+                    "recall": 0.425048828125,
+                    "fscore": 0.49060773849487305,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.06827327609062195,
+                    "precision": 0.865234375,
+                    "recall": 0.7200927734375,
+                    "fscore": 0.786019504070282,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.06827327609062195,
+                    "precision": 0.9921875,
+                    "recall": 0.97564697265625,
+                    "fscore": 0.9838477373123169,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.0805211067199707,
+                    "precision": 0.44921875,
+                    "recall": 0.4715576171875,
+                    "fscore": 0.4601171910762787,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.0805211067199707,
+                    "precision": 0.720703125,
+                    "recall": 0.7061767578125,
+                    "fscore": 0.7133659720420837,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.0805211067199707,
+                    "precision": 0.994140625,
+                    "recall": 0.96295166015625,
+                    "fscore": 0.9782976508140564,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.08456374704837799,
+                    "precision": 0.435546875,
+                    "recall": 0.3778076171875,
+                    "fscore": 0.40462782979011536,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.08456374704837799,
+                    "precision": 0.77734375,
+                    "recall": 0.71002197265625,
+                    "fscore": 0.7421593070030212,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.08456374704837799,
+                    "precision": 0.978515625,
+                    "recall": 0.952392578125,
+                    "fscore": 0.965277373790741,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/conch_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.10593967139720917,
+                    "precision": 0.5078125,
+                    "recall": 0.133544921875,
+                    "fscore": 0.21147577464580536,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.10593967139720917,
+                    "precision": 0.826171875,
+                    "recall": 0.35736083984375,
+                    "fscore": 0.4989156126976013,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.10593967139720917,
+                    "precision": 1.0,
+                    "recall": 0.95379638671875,
+                    "fscore": 0.9763518571853638,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "chess": {
+    "chess_001": {
+      "object_id": "chess_001",
+      "images": [
+        {
+          "image_idx": 0,
+          "original_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/images/chess/chess_001/r_0.png",
+          "distortions": [
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur0.0_noise0.0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0.0,
+                "noise": 0.0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.23669539391994476,
+                    "precision": 0.208984375,
+                    "recall": 0.166259765625,
+                    "fscore": 0.18518979847431183,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.23669539391994476,
+                    "precision": 0.427734375,
+                    "recall": 0.37725830078125,
+                    "fscore": 0.400913804769516,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.23669539391994476,
+                    "precision": 0.84375,
+                    "recall": 0.84063720703125,
+                    "fscore": 0.8421907424926758,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur0_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.2635813057422638,
+                    "precision": 0.16796875,
+                    "recall": 0.13323974609375,
+                    "fscore": 0.14860214293003082,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.2635813057422638,
+                    "precision": 0.37109375,
+                    "recall": 0.347412109375,
+                    "fscore": 0.35886266827583313,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.2635813057422638,
+                    "precision": 0.796875,
+                    "recall": 0.80926513671875,
+                    "fscore": 0.8030222654342651,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur4_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 4,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.2122536599636078,
+                    "precision": 0.236328125,
+                    "recall": 0.144287109375,
+                    "fscore": 0.1791788637638092,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.2122536599636078,
+                    "precision": 0.48828125,
+                    "recall": 0.3116455078125,
+                    "fscore": 0.3804614841938019,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.2122536599636078,
+                    "precision": 0.904296875,
+                    "recall": 0.830810546875,
+                    "fscore": 0.8659975528717041,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur10_noise0_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 10,
+                "noise": 0,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.2081383913755417,
+                    "precision": 0.265625,
+                    "recall": 0.13177490234375,
+                    "fscore": 0.1761586219072342,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.2081383913755417,
+                    "precision": 0.544921875,
+                    "recall": 0.3250732421875,
+                    "fscore": 0.4072195887565613,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.2081383913755417,
+                    "precision": 0.9375,
+                    "recall": 0.80096435546875,
+                    "fscore": 0.8638705611228943,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur0_noise60_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 60,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.21346227824687958,
+                    "precision": 0.251953125,
+                    "recall": 0.1763916015625,
+                    "fscore": 0.20750769972801208,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.21346227824687958,
+                    "precision": 0.458984375,
+                    "recall": 0.38189697265625,
+                    "fscore": 0.4169071912765503,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.21346227824687958,
+                    "precision": 0.908203125,
+                    "recall": 0.8524169921875,
+                    "fscore": 0.8794262409210205,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur0_noise150_exp1.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 150,
+                "exposure": 1.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.2154710590839386,
+                    "precision": 0.224609375,
+                    "recall": 0.15679931640625,
+                    "fscore": 0.1846764236688614,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.2154710590839386,
+                    "precision": 0.4609375,
+                    "recall": 0.35455322265625,
+                    "fscore": 0.4008062183856964,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.2154710590839386,
+                    "precision": 0.8984375,
+                    "recall": 0.8419189453125,
+                    "fscore": 0.8692604899406433,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur0_noise0_exp2.5/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 2.5
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.23925507068634033,
+                    "precision": 0.255859375,
+                    "recall": 0.08636474609375,
+                    "fscore": 0.12913893163204193,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.23925507068634033,
+                    "precision": 0.490234375,
+                    "recall": 0.22552490234375,
+                    "fscore": 0.3089308440685272,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.23925507068634033,
+                    "precision": 0.859375,
+                    "recall": 0.80584716796875,
+                    "fscore": 0.831750750541687,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            },
+            {
+              "distorted_image": "/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/datasets/omniobject3d/spar3d_outputs/chess_001/blur0_noise0_exp7.0/img_0.png",
+              "distortion": {
+                "blur": 0,
+                "noise": 0,
+                "exposure": 7.0
+              },
+              "evaluations": [
+                {
+                  "tau": 0.1,
+                  "metrics": {
+                    "chamfer_distance": 0.25048738718032837,
+                    "precision": 0.2265625,
+                    "recall": 0.0870361328125,
+                    "fscore": 0.1257602721452713,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.2,
+                  "metrics": {
+                    "chamfer_distance": 0.25048738718032837,
+                    "precision": 0.435546875,
+                    "recall": 0.22222900390625,
+                    "fscore": 0.2942982614040375,
+                    "device_used": "cpu"
+                  }
+                },
+                {
+                  "tau": 0.5,
+                  "metrics": {
+                    "chamfer_distance": 0.25048738718032837,
+                    "precision": 0.869140625,
+                    "recall": 0.79058837890625,
+                    "fscore": 0.8280056118965149,
+                    "device_used": "cpu"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

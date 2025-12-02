@@ -10,7 +10,7 @@ from PIL import Image
 
 from distortion import distort_image
 from evaluation import evaluate_pointcloud
-from loading_things import load_ply_pointcloud
+from loading_things import load_ply_pointcloud, load_dataset_relations
 from paths import fix_path
 
 SPAR3D_DIR = fix_path(Path("/mnt/c/Users/joshu/PycharmProjects/CS5404-Final-Project/stable-point-aware-3d"))
@@ -63,10 +63,6 @@ def process_one_object(object_id: str, img_dir: Path, gt_pointcloud_path: Path, 
     # Load the first {images_per_object} database images
     images = sorted(list(Path(img_dir).glob("*.png")))[:images_per_object]
 
-    # Add the original image (no distortion)
-    base_level = dict(blur=0.0, noise=0.0, exposure=1.0)
-    all_levels = [base_level] + distortion_levels
-
     if output_root is None:
         output_root = Path("spar3d_outputs")
 
@@ -82,7 +78,7 @@ def process_one_object(object_id: str, img_dir: Path, gt_pointcloud_path: Path, 
             distortions=[],
         )
 
-        for distortion in all_levels:
+        for distortion in distortion_levels:
             blur, noise, exposure = distortion["blur"], distortion["noise"], distortion["exposure"]
             print(f"\n[INFO] Image {i}, Distortion: blur={blur}, noise={noise}, exposure={exposure}")
 
@@ -134,3 +130,81 @@ def save_results_json(results: dict, path: Path):
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w") as f:
         json.dump(results, f, indent=2)
+
+
+import json
+from pathlib import Path
+
+from evaluation import evaluate_pointcloud
+from loading_things import load_ply_pointcloud
+
+
+def reevaluate_results_with_folder(
+    old_json_path: Path,
+    new_json_path: Path,
+    new_taus: list[float],
+    spar3d_outputs_root: Path,
+    object_relations_path: Path,
+):
+    """
+    Re-run evaluations for new tau values using already-generated point clouds in spar3d_outputs.
+    - Uses the previous JSON to know which objects/images/distortions exist
+    - Finds PLY files dynamically in spar3d_outputs/<object_id>/
+    """
+
+    # Load old results JSON
+    with open(old_json_path, "r") as f:
+        data = json.load(f)
+
+    for category_name, category_objs in data.items():
+        for object_id, obj_data in category_objs.items():
+            # Find the object folder in the spar3d_outputs folder
+            object_folder = spar3d_outputs_root / object_id
+            if not object_folder.exists():
+                continue
+
+            # Find the ground truth point cloud from the relations file
+            grouped_data = load_dataset_relations(object_relations_path)
+            gt_path = grouped_data[category_name][object_id]["point_cloud"]
+            gt_points = load_ply_pointcloud(gt_path)
+
+            for img_data in obj_data["images"]:
+                for dist_data in img_data["distortions"]:
+                    # Reconstruct the point cloud file name
+                    pts_file_name = f"pts_img{img_data['image_idx']}_blur{dist_data['distortion']['blur']}_noise{dist_data['distortion']['noise']}_exp{dist_data['distortion']['exposure']}.ply"
+                    points = load_ply_pointcloud(object_folder / pts_file_name)
+
+                    # Clear old evaluations
+                    dist_data["evaluations"] = []
+
+                    # Recompute for each new tau
+                    for tau in new_taus:
+                        metrics = evaluate_pointcloud(points, gt_points, tau=tau)
+                        dist_data["evaluations"].append({
+                            "tau": tau,
+                            "metrics": metrics
+                        })
+
+    # Save updated JSON
+    new_json_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(new_json_path, "w") as f:
+        json.dump(data, f, indent=2)
+
+    print(f"[DONE] Saved updated results → {new_json_path}")
+
+
+
+
+# -------------------------
+# Example usage
+# -------------------------
+if __name__ == "__main__":
+    new_taus = [0.1, 0.2, 0.5]   # <--- CHANGE THESE
+
+    reevaluate_results_with_folder(
+        old_json_path=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs\pipeline_results_20251201_231844.json"),
+        new_json_path=Path("pipeline_results_re-evaluated.json"),
+        spar3d_outputs_root=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\spar3d_outputs"),
+        object_relations_path=Path(r"C:\Users\joshu\PycharmProjects\CS5404-Final-Project\datasets\omniobject3d\object_relations.json"),
+        new_taus=new_taus
+    )

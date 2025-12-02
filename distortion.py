@@ -29,7 +29,6 @@ if __name__ == "__main__":
     # Define some distortion levels to test
     distortions = [
         {"blur": 0, "noise": 0, "exposure": 1.0},
-        # {"blur": 0, "noise": 0, "exposure": 1.5},
         {"blur": 0, "noise": 0, "exposure": 2.5},
         {"blur": 0, "noise": 0, "exposure": 7.0}
     ]

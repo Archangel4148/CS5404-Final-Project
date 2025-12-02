@@ -3,6 +3,8 @@ import tarfile
 
 import gdown
 
+from paths import fix_path
+
 
 def download_files(wanted_files: list[str], out_dir, unzip=False):
     """Download selected files (expects wanted_files to be a list of file IDs)"""
@@ -11,7 +13,7 @@ def download_files(wanted_files: list[str], out_dir, unzip=False):
     for url in wanted_files:
         extract_name = url.replace("https://drive.google.com/file/d/", "")[:10]
         fname = extract_name + ".tar.gz"
-        extract_dir = os.path.join(out_dir, extract_name + "\\")
+        extract_dir = fix_path(os.path.join(out_dir, extract_name))
         out_path = os.path.join(out_dir, fname)
 
         if os.path.exists(out_path):

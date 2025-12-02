@@ -3,6 +3,8 @@ from pathlib import Path
 from plyfile import PlyData
 import numpy as np
 
+from paths import fix_path
+
 
 def load_dataset_relations(json_path) -> dict[str: dict[str: Path]]:
     """
@@ -17,8 +19,8 @@ def load_dataset_relations(json_path) -> dict[str: dict[str: Path]]:
     for group_name, group_objs in data.items():
         grouped_data[group_name] = {}
         for obj_id, fields in group_objs.items():
-            pc_path = fields.get("point_cloud")
-            img_dir = fields.get("images")
+            pc_path = fix_path(fields.get("point_cloud"))
+            img_dir = fix_path(fields.get("images"))
 
             if pc_path is None or img_dir is None:
                 print(f"[WARN] Missing fields for {obj_id}, skipping")
