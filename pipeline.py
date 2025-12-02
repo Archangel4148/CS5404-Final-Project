@@ -2,6 +2,7 @@ import json
 import shutil
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 
 import numpy as np
@@ -99,7 +100,10 @@ def process_one_object(object_id: str, img_dir: Path, gt_pointcloud_path: Path, 
 
             # Run SPAR3D on the distorted image
             out_ply = output_root / object_id / f"pts_img{i}_blur{blur}_noise{noise}_exp{exposure}.ply"
+            start_time = time.perf_counter()
             pred_pts = run_spar3d_reconstruction(dist_path, output_file_path=out_ply)
+            spar3d_time = time.perf_counter() - start_time
+            print(f"[SPAR3D] Finished in {spar3d_time:.2f} seconds")
 
             img_results["distortions"].append(dict(
                 distorted_image=str(dist_path),
